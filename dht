@@ -14,3 +14,5 @@ void loop() {
   Serial.println(DHT.humidity, 1);
   delay(5000);
 }
+
+![image](https://user-images.githubusercontent.com/60500365/129815593-38efe0f8-55af-4136-b18f-4b24f75c88ee.png)
