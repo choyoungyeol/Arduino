@@ -14,5 +14,3 @@ void loop() {
   Serial.println(DHT.humidity, 1);
   delay(5000);
 }
-
-https://github.com/choyoungyeol/Arduino/issues/1#issue-973149466
