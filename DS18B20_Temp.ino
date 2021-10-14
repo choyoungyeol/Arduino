@@ -18,7 +18,7 @@ void loop(void) {
   Serial.print("Sensor 1: ");
   Temp = sensors.getTempC(sensor1);
   Serial.println(Temp);
-  Serial.print("Sensor 1: ");
+  Serial.print("Sensor 2: ");
   Temp1 = sensors.getTempC(sensor2);
   Serial.println(Temp1);
   Serial.println();
