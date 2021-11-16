@@ -1,8 +1,8 @@
 #include <LoRa.h>
 #include <Sensirion.h>
 
-const uint8_t dataPin  =  2;
-const uint8_t clockPin =  3;
+const uint8_t dataPin  =  5;
+const uint8_t clockPin =  6;
 
 float temperature;
 float humidity;
@@ -36,7 +36,7 @@ void loop()
   Serial.println(" C");
 
   delay(2000);
-  outString = String(temperature) + "," + String(humidity) + "," + String(dewpoint);
+  outString = "Temperature = " + String(temperature) + " oC, Humidity = " + String(humidity) + " %, Dewpoint temp = " + String(dewpoint) + " oc";
 
   LoRa.beginPacket();
   LoRa.print(outString);
