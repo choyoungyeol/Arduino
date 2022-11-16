@@ -100,25 +100,26 @@ void loop() {
       dataFile.print(Weight_kg, 3);
       dataFile.println("");
       dataFile.close();
-      Serial.print(now.year());
-      Serial.print("-");
-      Serial.print(now.month());
-      Serial.print("-");
-      Serial.print(now.day());
-      Serial.print(" ");
-      Serial.print(now.hour());
-      Serial.print(":");
-      Serial.print(now.minute());
-      Serial.print(":");
-      Serial.print(now.second());
-      Serial.print(",");
-      Serial.print(Weight_lbs, 2); //scale.get_units() returns a float
-      Serial.print(","); //You can change this to kg but you'll need to refactor the calibration_factor
-      Serial.print(Weight_kg, 3); //scale.get_units() returns a float
-      Serial.println("");
       time_check = time_time;
     }
   }
+
+  Serial.print(now.year());
+  Serial.print("-");
+  Serial.print(now.month());
+  Serial.print("-");
+  Serial.print(now.day());
+  Serial.print(" ");
+  Serial.print(now.hour());
+  Serial.print(":");
+  Serial.print(now.minute());
+  Serial.print(":");
+  Serial.print(now.second());
+  Serial.print(",");
+  Serial.print(Weight_lbs, 2); //scale.get_units() returns a float
+  Serial.print(","); //You can change this to kg but you'll need to refactor the calibration_factor
+  Serial.print(Weight_kg, 3); //scale.get_units() returns a float
+  Serial.println("");
 
   if ((now.hour() > 18) || (now.hour() < 6)) {
     lcd.noBacklight();
