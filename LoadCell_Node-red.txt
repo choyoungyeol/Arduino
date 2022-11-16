@@ -1,0 +1,692 @@
+[
+    {
+        "id": "6e9a8b6435b2d3ad",
+        "type": "tab",
+        "label": "플로우 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f83bef1960b84382",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar lbs = parseFloat(output[1]);\nvar msg = {payload:lbs};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "1c89cfcce5e249e0"
+            ]
+        ]
+    },
+    {
+        "id": "a6ef6ee11c809808",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar kg = parseFloat(output[2]);\nvar msg = {payload:kg};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 120,
+        "wires": [
+            [
+                "eb96cc0f9a94a8b1"
+            ]
+        ]
+    },
+    {
+        "id": "1c89cfcce5e249e0",
+        "type": "ui_gauge",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "group": "ee1993efd0a3fd12",
+        "order": 5,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Pound1",
+        "label": "lbs",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 700,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "eb96cc0f9a94a8b1",
+        "type": "ui_gauge",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "group": "ee1993efd0a3fd12",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Kg1",
+        "label": "kg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 690,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7b2f847acddf41f6",
+        "type": "serial in",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "serial": "90c2d770290e3da8",
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [
+                "f83bef1960b84382",
+                "a6ef6ee11c809808",
+                "51caad70ac2ca979",
+                "36f7b97866de0567"
+            ]
+        ]
+    },
+    {
+        "id": "51caad70ac2ca979",
+        "type": "ui_text",
+        "z": "6e9a8b6435b2d3ad",
+        "group": "ee1993efd0a3fd12",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "text1",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 530,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4d4a813963ddfc1c",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar lbs = parseFloat(output[1]);\nvar msg = {payload:lbs};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 260,
+        "wires": [
+            [
+                "b40a08c7b26e83d7"
+            ]
+        ]
+    },
+    {
+        "id": "7edce462f139dcfa",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar kg = parseFloat(output[2]);\nvar msg = {payload:kg};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "fdfd978c5bd8c3e7"
+            ]
+        ]
+    },
+    {
+        "id": "b40a08c7b26e83d7",
+        "type": "ui_gauge",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "group": "ee1993efd0a3fd12",
+        "order": 6,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Pound2",
+        "label": "lbs",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 700,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fdfd978c5bd8c3e7",
+        "type": "ui_gauge",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "group": "ee1993efd0a3fd12",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Kg2",
+        "label": "kg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 690,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2c9f6bc0f735b942",
+        "type": "serial in",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "serial": "90c2d770290e3da8",
+        "x": 370,
+        "y": 260,
+        "wires": [
+            [
+                "4d4a813963ddfc1c",
+                "7edce462f139dcfa",
+                "581160d9078a5f80",
+                "493c74f196d78063"
+            ]
+        ]
+    },
+    {
+        "id": "581160d9078a5f80",
+        "type": "ui_text",
+        "z": "6e9a8b6435b2d3ad",
+        "group": "ee1993efd0a3fd12",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "text2",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 530,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "79fb0456b659a051",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar lbs = parseFloat(output[1]);\nvar msg = {payload:lbs};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 440,
+        "wires": [
+            [
+                "c3e396db947ae61c"
+            ]
+        ]
+    },
+    {
+        "id": "b492e46dd8f4e0ad",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar kg = parseFloat(output[2]);\nvar msg = {payload:kg};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 480,
+        "wires": [
+            [
+                "6c1092de262e7408"
+            ]
+        ]
+    },
+    {
+        "id": "c3e396db947ae61c",
+        "type": "ui_gauge",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "group": "ee1993efd0a3fd12",
+        "order": 7,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Pound3",
+        "label": "lbs",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 700,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6c1092de262e7408",
+        "type": "ui_gauge",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "group": "ee1993efd0a3fd12",
+        "order": 3,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Kg3",
+        "label": "kg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 690,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "0ce2c50ba7052cad",
+        "type": "serial in",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "serial": "90c2d770290e3da8",
+        "x": 370,
+        "y": 440,
+        "wires": [
+            [
+                "79fb0456b659a051",
+                "b492e46dd8f4e0ad",
+                "12ed920cb38d66ad",
+                "914b0a98f9d3fac9"
+            ]
+        ]
+    },
+    {
+        "id": "12ed920cb38d66ad",
+        "type": "ui_text",
+        "z": "6e9a8b6435b2d3ad",
+        "group": "ee1993efd0a3fd12",
+        "order": 11,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "text3",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 530,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "09233a2f879604d1",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar lbs = parseFloat(output[1]);\nvar msg = {payload:lbs};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 620,
+        "wires": [
+            [
+                "7753dd931712fdb8"
+            ]
+        ]
+    },
+    {
+        "id": "873070c56648b4c0",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar kg = parseFloat(output[2]);\nvar msg = {payload:kg};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 660,
+        "wires": [
+            [
+                "4247a378316528bb"
+            ]
+        ]
+    },
+    {
+        "id": "7753dd931712fdb8",
+        "type": "ui_gauge",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "group": "ee1993efd0a3fd12",
+        "order": 8,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Pound4",
+        "label": "lbs",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 700,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "4247a378316528bb",
+        "type": "ui_gauge",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "group": "ee1993efd0a3fd12",
+        "order": 4,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Kg4",
+        "label": "kg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 690,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "7848988552f69ad7",
+        "type": "serial in",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "serial": "90c2d770290e3da8",
+        "x": 370,
+        "y": 620,
+        "wires": [
+            [
+                "09233a2f879604d1",
+                "873070c56648b4c0",
+                "48b96af6f787e1de",
+                "b048a3b4a55821e4"
+            ]
+        ]
+    },
+    {
+        "id": "48b96af6f787e1de",
+        "type": "ui_text",
+        "z": "6e9a8b6435b2d3ad",
+        "group": "ee1993efd0a3fd12",
+        "order": 12,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "text4",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 530,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "36f7b97866de0567",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var newDate = new Date();\nvar date = newDate.toLocaleDateString();\nvar time = newDate.toLocaleTimeString('en-US', { hour12: false});\n\nmsg.payload = date + \",\" + time + \",\" + msg.payload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 160,
+        "wires": [
+            [
+                "3f64099ed6b1bc3b"
+            ]
+        ]
+    },
+    {
+        "id": "3f64099ed6b1bc3b",
+        "type": "file",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "filename": "D://Data/Logger1.csv",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 780,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "493c74f196d78063",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var newDate = new Date();\nvar date = newDate.toLocaleDateString();\nvar time = newDate.toLocaleTimeString('en-US', { hour12: false});\n\nmsg.payload = date + \",\" + time + \",\" + msg.payload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 340,
+        "wires": [
+            [
+                "e75c9264deb19440"
+            ]
+        ]
+    },
+    {
+        "id": "e75c9264deb19440",
+        "type": "file",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "filename": "D://Data/Logger2.csv",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 780,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "914b0a98f9d3fac9",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var newDate = new Date();\nvar date = newDate.toLocaleDateString();\nvar time = newDate.toLocaleTimeString('en-US', { hour12: false});\n\nmsg.payload = date + \",\" + time + \",\" + msg.payload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 520,
+        "wires": [
+            [
+                "cd1c2d951531bf74"
+            ]
+        ]
+    },
+    {
+        "id": "cd1c2d951531bf74",
+        "type": "file",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "filename": "D://Data/Logger3.csv",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 780,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b048a3b4a55821e4",
+        "type": "function",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "func": "var newDate = new Date();\nvar date = newDate.toLocaleDateString();\nvar time = newDate.toLocaleTimeString('en-US', { hour12: false});\n\nmsg.payload = date + \",\" + time + \",\" + msg.payload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 700,
+        "wires": [
+            [
+                "cbb8bcf928838ee8"
+            ]
+        ]
+    },
+    {
+        "id": "cbb8bcf928838ee8",
+        "type": "file",
+        "z": "6e9a8b6435b2d3ad",
+        "name": "",
+        "filename": "D://Data/Logger4.csv",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 780,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee1993efd0a3fd12",
+        "type": "ui_group",
+        "name": "Load",
+        "tab": "40c145bc7241a774",
+        "order": 1,
+        "disp": true,
+        "width": 24,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "90c2d770290e3da8",
+        "type": "serial-port",
+        "serialport": "COM40",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "40c145bc7241a774",
+        "type": "ui_tab",
+        "name": "LoadCell",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    }
+]
