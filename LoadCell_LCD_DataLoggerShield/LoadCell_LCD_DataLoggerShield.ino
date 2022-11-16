@@ -5,7 +5,7 @@
 #include <RTClib.h>
 #include <SPI.h>
 
-#define calibration_factor -39250.0
+#define calibration_factor -38790.0
 #define DOUT  3
 #define CLK  2
 HX711 scale(DOUT, CLK);
@@ -95,21 +95,35 @@ void loop() {
       dataFile.print(":");
       dataFile.print(now.second());
       dataFile.print(",");
-      dataFile.print(Weight_lbs, 2); //scale.get_units() returns a float
-      dataFile.print(","); //You can change this to kg but you'll need to refactor the calibration_factor
-      dataFile.print(Weight_kg, 3); //scale.get_units() returns a float
+      dataFile.print(Weight_lbs, 2);
+      dataFile.print(",");
+      dataFile.print(Weight_kg, 3);
       dataFile.println("");
-      dataFile.close(); //Data isn't actually written until we close the connection!
-      //Print same thing to the screen for debugging
+      dataFile.close();
+      Serial.print(now.year());
+      Serial.print("-");
+      Serial.print(now.month());
+      Serial.print("-");
+      Serial.print(now.day());
+      Serial.print(" ");
+      Serial.print(now.hour());
+      Serial.print(":");
+      Serial.print(now.minute());
+      Serial.print(":");
+      Serial.print(now.second());
+      Serial.print(",");
+      Serial.print(Weight_lbs, 2); //scale.get_units() returns a float
+      Serial.print(","); //You can change this to kg but you'll need to refactor the calibration_factor
+      Serial.print(Weight_kg, 3); //scale.get_units() returns a float
+      Serial.println("");
       time_check = time_time;
     }
   }
 
-  if ((now.hour() > 18) || (now.hour() < 12)) {
+  if ((now.hour() > 18) || (now.hour() < 6)) {
     lcd.noBacklight();
   } else {
     lcd.backlight();
   }
-
   delay(refresh_rate);
 }
