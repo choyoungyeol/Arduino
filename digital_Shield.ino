@@ -3,7 +3,7 @@
 
 #define DHTPIN 12
 #define DHTTYPE DHT11
-#define Water_pin A0
+#define Water_pin A3
 #define Pump 10
 
 DHT dht(DHTPIN, DHTTYPE);
@@ -11,6 +11,7 @@ DHT dht(DHTPIN, DHTTYPE);
 void setup() {
   Serial.begin(9600);
   DigitShield.begin();
+  dht.begin();
   pinMode(Pump, OUTPUT);
 }
 
