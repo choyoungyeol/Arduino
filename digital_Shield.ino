@@ -18,14 +18,16 @@ void loop() {
   delay(2000);
   int h = dht.readHumidity();
   int t = dht.readTemperature();
-  int Water = analogRead(Water_pin);
+  int Water_value = analogRead(Water_pin);
+  int Water = map(Water_value, 1023, 357, 0, 100);
+  Water = constrant(Water, 0, 100);
   DigitShield.setValue(t);
   delay(2000);
   DigitShield.setValue(h);
   delay(2000);
   DigitShield.setValue(Water);
   delay(2000);
-  if (Water > 600) {
+  if (Water < 10) {
     digitalWrite(Pump, HIGH);
   } else {
     digitalWrite(Pump, LOW);
