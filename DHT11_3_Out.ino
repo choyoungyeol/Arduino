@@ -1,7 +1,7 @@
 #include "DHT.h"
 #define DHTPIN A1
 #define DHTTYPE DHT22
-#define Fan 22
+#define Fan 46
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
