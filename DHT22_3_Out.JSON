@@ -1,0 +1,21 @@
+[
+    {
+        "id": "fe280bbd6f482a35",
+        "type": "function",
+        "z": "82f029b63c31fdd1",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar RH = parseFloat(output[1]);\nvar msg = {payload:RH};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 311.28407287597656,
+        "y": 438.82669830322266,
+        "wires": [
+            [
+                "d4feb5c0d1bb7157"
+            ]
+        ]
+    }
+]
